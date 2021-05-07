@@ -1,0 +1,79 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<title>leah&mumu的小世界</title>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<style type="text/css">
+		@font-face {
+			font-family: digit;
+			src: url('digital-7_mono.ttf') format("truetype");
+		}
+	</style>
+	<link href="css/default.css" type="text/css" rel="stylesheet">
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/garden.js"></script>
+    <script type="text/javascript" src="js/functions.js"></script>
+</head>
+
+<body>
+	<div id="mainDiv">
+		<div id="content">
+			<div id="code">
+				<br />
+				<br />
+				<div class="keyword">5.1日，第一次和你看电影，第一次牵你的手，第一次听你唱歌，第一次拥抱。。。很幸运!这么多第一次在这一天发生了，更幸运的是，我情不自禁的说出口了，[要不当我女朋友吧]</div><br /><br  /><br /><br  /><br />
+				<div class="keyword">5.2日，从你说[我愿意]起，我们成为了情侣。憧憬着有你的未来是多么美好，一起旅游，一起做做美食，一起看遍所有电影和剧，一起玩遍游戏，一起经历未来生活中的点点滴滴。。。</div>
+			</div>
+			<div id="loveHeart">
+				<canvas id="garden"></canvas>
+				<div id="words">
+					<div id="messages">
+						leah，我们已经相恋了
+						<div id="elapseClock"></div>
+					</div>
+					<div id="loveu">
+						&nbsp;&nbsp;&nbsp;&nbsp;你是无意穿堂风<br/>
+						<div class="signature">mumu</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="copyright">
+			 <a href='https://beian.miit.gov.cn/' target='_blank'></a> Copyright © 2021
+		</div>
+	</div>
+	<script type="text/javascript">
+		var offsetX = $("#loveHeart").width() / 2;
+		var offsetY = $("#loveHeart").height() / 2 - 55;
+		var together = new Date();
+		together.setFullYear(2021, 4, 2);
+		together.setHours(10);
+		together.setMinutes(0);
+		together.setSeconds(0);
+		together.setMilliseconds(0);
+		
+		if (!document.createElement('canvas').getContext) {
+			var msg = document.createElement("div");
+			msg.id = "errorMsg";
+			msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+"; 
+			document.body.appendChild(msg);
+			$("#code").css("display", "none")
+			$("#copyright").css("position", "absolute");
+			$("#copyright").css("bottom", "10px");
+		    document.execCommand("stop");
+		} else {
+			setTimeout(function () {
+				startHeartAnimation();
+			}, 5000);
+
+			timeElapse(together);
+			setInterval(function () {
+				timeElapse(together);
+			}, 500);
+
+			adjustCodePosition();
+			$("#code").typewriter();
+		}
+	</script>
+</body>
+</html>
