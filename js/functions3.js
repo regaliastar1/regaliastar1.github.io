@@ -119,7 +119,7 @@ function adjustWordsPosition() {
     $("#words").css("left", $("#garden").position().left + 70)
 }
 function adjustCodePosition() {
-    $("#code").css("margin-top", ($("#garden").height() - $("#code").height()) / 2)
+    $("#code").css("margin-top", ($("#garden").height() - $("#code").height()) / 3)
 }
 function showLoveU() {
     $("#loveu").fadeIn(3000)
